@@ -1,3 +1,6 @@
+# 빌드 할 때에는 jdk 17버전을 사용하겠다!
+FROM eclipse-temurin:17-jdk AS build
+
 ARG EC2_HOST
 ENV EC2_HOST=${EC2_HOST}
 
@@ -42,9 +45,6 @@ ENV NAVER_CLIENT_ID=${NAVER_CLIENT_ID}
 
 ARG NAVER_CLIENT_SECRET
 ENV NAVER_CLIENT_SECRET=${NAVER_CLIENT_SECRET}
-
-# 빌드 할 때에는 jdk 17버전을 사용하겠다!
-FROM eclipse-temurin:17-jdk AS build
 
 # 작업 디렉토리 설정 - 우분투경로 배포될컴퓨터 경로
 WORKDIR /app
